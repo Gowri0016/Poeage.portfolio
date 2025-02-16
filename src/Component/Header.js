@@ -22,7 +22,7 @@ export default function Header() {
   return (
 <div className="text-black shadow-lg w-full h-20 text-center">
   {/* Image Section */}
-  <img className="w-62 h-20 md:justify-self-start  md: -ml-12" src={Lo} alt={Lo} />
+  <img className="w-62 h-20 md:justify-self-start md: -ml-16" src={Lo} alt={Lo} />
 
   <div>
     {/* Navigation Links */}
