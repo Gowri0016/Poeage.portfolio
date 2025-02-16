@@ -26,7 +26,7 @@ export default function Header() {
 
   <div>
     {/* Navigation Links */}
-    <div className="flex justify-center md:justify-end text-1xl gap-4 relative bottom-12 md:right-10">
+    <div className="flex justify-center md:justify-end text-1xl gap-4 relative bottom-12 mr-24">
       <p className="text-1xl hover:text-blue-700 cursor-pointer" onClick={homenavigate}>Home</p>
       <p className="text-1xl hover:text-blue-700 cursor-pointer" onClick={connavigate}>Contact</p>
       <p className="text-1xl hover:text-blue-700 cursor-pointer" onClick={detaavigate}>Project</p>
