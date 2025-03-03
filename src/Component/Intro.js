@@ -25,7 +25,7 @@ export default function Intro() {
     <div className="text-1.5xl h-auto md:h-80 mx-4 md:mx-64 mt-10">
       <h1 className=" flex justify-center relative bottom-5 font-extralight text-3xl md:text-4xl hover:text-blue-700 mt-6">Why Choose Us</h1>
     </div>
-      <div className="relative z-10 bottom-48 flex flex-wrap justify-center gap-8 md:gap-14 px-4">
+      <div className="relative z-10 bottom-2 md:bottom-44 m-2 flex flex-wrap justify-center gap-8 md:gap-14 px-4">
 
               <div className="w-full sm:w-64 md:w-72 lg:w-1/4 text-black bg-white font-semibold text-center p-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
               <img className="w-16 h-16 mx-auto mb-4" src={Exp} alt={Exp}></img>
