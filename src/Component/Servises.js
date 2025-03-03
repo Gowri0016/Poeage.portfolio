@@ -18,62 +18,54 @@ export default function Servises() {
 
             <div className="w-full sm:w-64 md:w-72 lg:w-1/4 text-black bg-white font-semibold text-center p-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
                 <p className="text-xl mb-2 text-blue-700">Ai Development</p>
-                <p className="text-sm text-gray-700"> : With years of industry expertise, we deliver innovative IT solutions that empower businesses to grow. Our team has hands-on experience across various domains, ensuring the best outcomes.
+                <p className="text-sm text-gray-700">  AI development is a broad field that involves creating intelligent systems capable of learning, reasoning, and problem-solving. It includes several key areas.
                 </p>
               </div>
 
               <div className="w-full sm:w-64 md:w-72 lg:w-1/4 text-black bg-white font-semibold text-center p-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
                 <p className="text-xl mb-2 text-blue-700">Application Design</p>
-                <p className="text-sm text-gray-700"> : With years of industry expertise, we deliver innovative IT solutions that empower businesses to grow. Our team has hands-on experience across various domains, ensuring the best outcomes.
-                </p>
+                <p className="text-sm text-gray-700">  Application development is the process of designing, building, testing, and deploying software applications for various platforms. It involves several stages and can be categorized into different types based on the platform and technology used.  </p>
               </div>
 
               <div className="w-full sm:w-64 md:w-72 lg:w-1/4 text-black bg-white font-semibold text-center p-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
                 <p className="text-xl mb-2 text-blue-700">Web Design</p>
-                <p className="text-sm text-gray-700"> : With years of industry expertise, we deliver innovative IT solutions that empower businesses to grow. Our team has hands-on experience across various domains, ensuring the best outcomes.
+                <p className="text-sm text-gray-700">  Web development involves creating and maintaining websites or web applications. It includes frontend development (what users see), backend development (server-side logic and databases), and full-stack development (both frontend and backend).
                 </p>
               </div>
 
               <div className="w-full sm:w-64 md:w-72 lg:w-1/4 text-black bg-white font-semibold text-center p-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
                 <p className="text-xl mb-2 text-blue-700">Data Since</p>
-                <p className="text-sm text-gray-700"> : With years of industry expertise, we deliver innovative IT solutions that empower businesses to grow. Our team has hands-on experience across various domains, ensuring the best outcomes.
-                </p>
+                <p className="text-sm text-gray-700"> Data Science is an interdisciplinary field that combines statistics, programming, and domain expertise to extract meaningful insights from data. It is widely used in industries like healthcare, finance, marketing, and artificial intelligence. </p>
               </div>
 
               <div className="w-full sm:w-64 md:w-72 lg:w-1/4 text-black bg-white font-semibold text-center p-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
                 <p className="text-xl mb-2 text-blue-700">Web Hosting</p>
-                <p className="text-sm text-gray-700"> : With years of industry expertise, we deliver innovative IT solutions that empower businesses to grow. Our team has hands-on experience across various domains, ensuring the best outcomes.
-                </p>
+                <p className="text-sm text-gray-700"> Web hosting is a service that allows websites to be stored and accessed on the internet. A hosting provider offers the infrastructure and resources needed to keep your website online 24/7. </p>
               </div>
 
               <div className="w-full sm:w-64 md:w-72 lg:w-1/4 text-black bg-white font-semibold text-center p-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
                 <p className="text-xl mb-2 text-blue-700">SEO Optimization</p>
-                <p className="text-sm text-gray-700"> : With years of industry expertise, we deliver innovative IT solutions that empower businesses to grow. Our team has hands-on experience across various domains, ensuring the best outcomes.
-                </p>
+                <p className="text-sm text-gray-700"> Search Engine Optimization (SEO) is the process of improving a website’s visibility on search engines like Google, Bing, and Yahoo. The goal is to rank higher in search results, drive organic traffic, and improve user engagement. </p>
               </div>
 
               <div className="w-full sm:w-64 md:w-72 lg:w-1/4 text-black bg-white font-semibold text-center p-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
                 <p className="text-xl mb-2 text-blue-700">Cloud Server</p>
-                <p className="text-sm text-gray-700"> : With years of industry expertise, we deliver innovative IT solutions that empower businesses to grow. Our team has hands-on experience across various domains, ensuring the best outcomes.
-                </p>
+                <p className="text-sm text-gray-700"> A cloud server is a virtual server hosted on a cloud computing platform. Unlike traditional physical servers, cloud servers use distributed resources across multiple data centers, making them more scalable, flexible, and reliable.</p>
               </div>
 
               <div className="w-full sm:w-64 md:w-72 lg:w-1/4 text-black bg-white font-semibold text-center p-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
                 <p className="text-xl mb-2 text-blue-700">Social Media</p>
-                <p className="text-sm text-gray-700"> : With years of industry expertise, we deliver innovative IT solutions that empower businesses to grow. Our team has hands-on experience across various domains, ensuring the best outcomes.
-                </p>
+                <p className="text-sm text-gray-700"> Social media is a collection of online platforms that allow users to create, share, and engage with content. It plays a crucial role in communication, marketing, business growth, and personal branding.  </p>
               </div>
 
               <div className="w-full sm:w-64 md:w-72 lg:w-1/4 text-black bg-white font-semibold text-center p-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
                 <p className="text-xl mb-2 text-blue-700">Data Security</p>
-                <p className="text-sm text-gray-700"> : With years of industry expertise, we deliver innovative IT solutions that empower businesses to grow. Our team has hands-on experience across various domains, ensuring the best outcomes.
-                </p>
+                <p className="text-sm text-gray-700"> Data security refers to protecting digital information from unauthorized access, data breaches, cyberattacks, and loss. It is essential for individuals, businesses, and organizations to ensure privacy, integrity, and availability of data. </p>
               </div>
 
               <div className="w-full sm:w-64 md:w-72 lg:w-1/4 text-black bg-white font-semibold text-center p-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
                 <p className="text-xl mb-2 text-blue-700">UI/UX Design</p>
-                <p className="text-sm text-gray-700"> : With years of industry expertise, we deliver innovative IT solutions that empower businesses to grow. Our team has hands-on experience across various domains, ensuring the best outcomes.
-                </p>
+                <p className="text-sm text-gray-700"> UI (User Interface) and UX (User Experience) design focus on creating visually appealing, easy-to-use, and engaging digital products like websites, mobile apps, and software.</p>
               </div>
 
             
