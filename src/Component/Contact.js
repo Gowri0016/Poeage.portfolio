@@ -1,42 +1,48 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
 
-export default function Contact() {
-  
-  // const [name, setname] = useState('')
-  // const [email, setemail] = useState('')
-  const [fullname , setName] = useState('')
-  const [email,setEmail]=useState('')
-  
+export default function Define() {
 
-    console.log("user name", fullname , email )
-    
-    return (
-      <div>
+const nameRef = useRef();
+const emailRef = useRef();
+const messageRef = useRef();
 
-      <div className="flex items-center justify-center min-h-screen bg-white shadow-lg">
-        
-        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 w-96">
+const onDefin = (e) => {
+  e.preventDefault();
 
-          <h2 className="text-blue-500 text-lg font-bold mb-4">Contact Us</h2>
+    alert("Submitted successfully...!");
 
-          <div className="">
-            <label className="block text-gray-700 text-sm font-bold mb-2" >Name</label>
-            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"type="text" placeholder="Your Name" value={fullname} onChange={(e) => setName(e.target.value)}/> 
-          </div>
-
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">Email</label>
-            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Your Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            </div>
-          <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-bold mb-2" >Message</label>
-            <textarea className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"id="message"placeholder="Your Message"rows="4"/>
-            </div>
-          <div className="flex items-center justify-between">
-            <button className="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Send</button>
-          </div>
-      </form>
-    </div>
-    </div>
-  );
 };
+
+return (
+  <div className="max-w-md mx-auto p-4 border rounded-lg shadow-lg">
+    <h2 className="text-xl font-semibold mb-4">Contact Us</h2>
+
+    <form onSubmit={onDefin}>
+
+      <div className="mb-3">
+        <label className="block font-medium">Name:</label>
+        <input type="text" ref={nameRef} className="w-full p-2 border rounded"/>
+        
+      </div>
+
+      <div className="mb-3">
+        <label className="block font-medium">Email:</label>
+        <input type="email" ref={emailRef} className="w-full p-2 border rounded"/>
+        
+      </div>
+
+      <div className="mb-3">
+        <label className="block font-medium">Message:</label>
+        <input type="message" ref={messageRef} className="w-full p-2 border rounded"/>
+
+          </div>
+
+      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+        Submit
+      </button>
+
+    </form>
+
+  </div>
+);
+}

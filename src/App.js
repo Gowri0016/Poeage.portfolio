@@ -6,14 +6,16 @@ import Details from './Component/Details';
 import Contact from './Component/Contact';
 // import SplashCursor from './Component/Splashcursor';
 import Intro from './Component/Intro';
+import Servises from './Component/Servises';
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <Intro/>
       <Routes>
+        <Route path="/Intro" element={<Intro />}></Route>
         <Route path="/Details" element={<Details/>}></Route>
+        <Route path="/Servises" element={<Servises/>}></Route>
         <Route path="/Contact" element={<Contact/>}></Route>
       </Routes>
       {/* <SplashCursor/> */}
