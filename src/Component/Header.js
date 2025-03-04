@@ -11,14 +11,18 @@ export default function Header() {
 
   const detanavigate = () => {
     navigate("/Contact");
+    setIsOpen(false)
+    
   };
 
   const projnavigate = () => {
     navigate("/Details");
+    setIsOpen(false)
   };
 
   const servnaigate = () => {
     navigate("/Servises");
+    setIsOpen(false)
   };
 
   const handleClick = () => {
