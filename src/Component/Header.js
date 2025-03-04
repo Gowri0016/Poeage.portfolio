@@ -1,40 +1,59 @@
-
-import Poeage from '../Asset/Logo.jpeg'
-import { useNavigate } from 'react-router-dom'
+import { useState } from "react";
+import Poeage from "../Asset/Logo.jpeg";
+import { useNavigate } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
-    const navigate = useNavigate()
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
-    const homenavigate = () => {
-        navigate('/Intro')
-    }
 
-    const detanavigate = () => {
-        navigate('/Contact')
-    }
 
-    const projnavigate = () => {
-        navigate('/Details')
-    }
+  const detanavigate = () => {
+    navigate("/Contact");
+  };
 
-    const servnaigate = () => {
-      navigate('/Servises')
-    }
+  const projnavigate = () => {
+    navigate("/Details");
+  };
+
+  const servnaigate = () => {
+    navigate("/Servises");
+  };
+
+  const handleClick = () => {
+    navigate('/')
+  }
 
   return (
-    <div className="h-20 w-full  bg-white shadow-lg flex justify-around items-center">
-        <div className="w-60">
-            <img src={Poeage} alt={Poeage}></img>
-        </div>
+    <div className="h-20 w-full bg-white shadow-lg flex justify-between items-center px-6">
+      {/* Logo */}
+      <div className="w-40" onClick={handleClick}>
+        <img src={Poeage} alt="Logo" />
+      </div>
 
-        <div className="flex gap-4">
-        <p className=" cursor-pointer hover:text-blue-500" onClick={homenavigate}>Home</p>
-        <p className=" cursor-pointer hover:text-blue-500" onClick={projnavigate}>Project</p>
-        <p className=" cursor-pointer hover:text-blue-500" onClick={detanavigate}>Contact Us</p>
-        <p className=" cursor-pointer hover:text-blue-500" onClick={servnaigate}>Services</p>
-          </div>       
-        
+      {/* Mobile Menu Button */}
+      <button onClick={() => setIsOpen(!isOpen)} className="text-black md:hidden">
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      {/* Desktop Menu */}
+      <div className="hidden md:flex gap-6 text-black">
+       
+        <p onClick={servnaigate} className="cursor-pointer hover:text-blue-400">Services</p>
+        <p onClick={projnavigate} className="cursor-pointer hover:text-blue-400">Projects</p>
+        <p onClick={detanavigate} className="cursor-pointer hover:text-blue-400">Contact</p>
+      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="absolute top-20 left-0 w-full bg-gray-700 text-white flex flex-col items-center gap-4 py-4 shadow-md md:hidden">
+         
+          <p onClick={servnaigate} className="cursor-pointer hover:text-blue-400">Services</p>
+          <p onClick={projnavigate} className="cursor-pointer hover:text-blue-400">Projects</p>
+          <p onClick={detanavigate} className="cursor-pointer hover:text-blue-400">Contact</p>
+        </div>
+      )}
     </div>
-  
-  )
+  );
 }
