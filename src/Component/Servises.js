@@ -34,7 +34,7 @@ export default function Servises() {
               </div>
 
               <div className="w-full sm:w-64 md:w-72 lg:w-1/4 text-black bg-white font-semibold text-center p-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
-                <p className="text-xl mb-2 text-blue-700">Data Since</p>
+                <p className="text-xl mb-2 text-blue-700">ata Science</p>
                 <p className="text-sm text-gray-700"> Data Science is an interdisciplinary field that combines statistics, programming, and domain expertise to extract meaningful insights from data. It is widely used in industries like healthcare, finance, marketing, and artificial intelligence. </p>
               </div>
 
