@@ -15,7 +15,7 @@ const onDefin = (e) => {
 
 return (
     <div>
-  <div className="text-1.5xl h-auto md:h-80 mx-4 md:mx-64 mt-10">
+  <div className="text-1.5xl h-auto md:h-80 mx-4 md:mx-64 mt-28 z-10">
   <h1 className="text-3xl md:text-8xl font-extralight hover:text-blue-700 mt-6">Contact</h1>
   <p className="mt-6 md:mt-16 text-sm md:text-base">
     Hi, I hope you're doing well. I am <span className="text-blue-600">Gowri Shankar</span> and I’m a web developer

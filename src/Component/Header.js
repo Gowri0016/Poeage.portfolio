@@ -30,9 +30,9 @@ export default function Header() {
   }
 
   return (
-    <div className="h-20 w-full bg-white shadow-lg flex justify-between items-center px-6">
+    <div className="h-24 w-full bg-white shadow-lg flex justify-around fixed top-0 z-20 items-center px-5 ">
       {/* Logo */}
-      <div className="w-40" onClick={handleClick}>
+      <div className="w-56" onClick={handleClick}>
         <img src={Poeage} alt="Logo" />
       </div>
 

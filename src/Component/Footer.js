@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footer() {
   return (
     <div className="">
-           <footer className="bg-gray-800 text-white py-6">
+           <footer className="bg-gray-800 text-white bottom-16 py-6">
             <div className="container mx-auto text-center">
                 <h2 className="text-lg font-bold">Stay Connected</h2>
                 <p className="mt-2">Follow us on our social media channels</p>
@@ -12,7 +12,7 @@ export default function Footer() {
                     <a href="https://www.linkedin.com/in/g-gowri-shankar/" className="mx-2 text-blue-400 hover:text-blue-600">linked in</a>
                     <a href="https://www.instagram.com/poeage_com?igsh=a3lncmZoZ21lZXVl" className="mx-2 text-blue-400 hover:text-blue-600">Instagram</a>
                 </div>
-                <p className="mt-4 text-sm">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
+                <p className="mt-4 text-sm">&copy; {new Date().getFullYear()} @2025 . All rights reserved.</p>
             </div>
         </footer>
     </div>
