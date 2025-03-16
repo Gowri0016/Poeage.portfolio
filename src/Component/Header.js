@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Poeage from "../Asset/Logo.jpeg";
+import Poeage from "../Asset/Logo.png";
 import { useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 

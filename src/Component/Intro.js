@@ -3,7 +3,6 @@ import React from 'react'
 import Exp from '../Asset/Expricence.png'
 import Pro from '../Asset/products.png'
 import Apo from '../Asset/Approch.png'
-import Pri from '../Asset/pricing.png'
 import Del from '../Asset/timing.png'
 import Sup from '../Asset/support.png'
 
@@ -44,12 +43,6 @@ export default function Intro() {
               <img className="w-16 h-16 mx-auto mb-4" src={Apo} alt={Apo}></img>
                 <p className="text-xl mb-2 text-blue-700">Approach</p>
                 <p className="text-sm text-gray-700"> Approach: Our approach is customer-centric, focusing on understanding your challenges and providing personalized solutions. We prioritize collaboration and transparency to ensure success.</p>
-              </div>
-
-              <div className="w-full sm:w-64 md:w-72 lg:w-1/4 text-black bg-white font-semibold text-center p-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
-              <img className="w-16 h-16 mx-auto mb-4" src={Pri} alt={Pri} ></img>
-                <p className="text-xl mb-2 text-blue-700">EPricing</p>
-                <p className="text-sm text-gray-700"> Pricing: We offer competitive pricing models that cater to businesses of all sizes. Our flexible pricing structure ensures cost-effectiveness without compromising quality. </p>
               </div>
               
               <div className="w-full sm:w-64 md:w-72 lg:w-1/4 text-black bg-white font-semibold text-center p-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">

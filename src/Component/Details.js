@@ -1,6 +1,6 @@
 import React from 'react';
 import GU from '../Asset/GU Datalogic.jpeg'
-import Lux from '../Asset/Luxurya.jpeg'
+// import Lux from '../Asset/Luxurya.jpeg'
 
 export default function Details() {
   const projects = [ 
@@ -9,12 +9,6 @@ export default function Details() {
       image: GU,
       description: 'This is a one of Stsrtup Company in Sakthiyamanglam.',
     },
-    {
-      title:'Luxyrya Tours',
-      image:Lux,
-      description:'This is one of tuors Pakeage.',
-      link:''
-    }
   ];
   return (
     <div>
