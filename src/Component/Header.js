@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Poeage from "../Asset/Logo.png";
+import Poeage from "../Asset/logo.png";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
