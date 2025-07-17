@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../Asset/logo.png";
-import { motion } from "framer-motion";
 import {
   Facebook,
   Instagram,
@@ -11,123 +10,155 @@ import {
 } from "lucide-react";
 
 const Footer = () => {
+  const [showButton, setShowButton] = useState(false);
 
-  // Variants for staggered animation
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowButton(window.scrollY > 120);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <footer className="bg-gray-900 text-white py-12 relative">
-      <div className="container mx-auto px-6 md:px-12 lg:px-24">
-        {/* About Us Section */}
-        <motion.section
-          className="container mx-auto py-8 px-4 sm:px-6 flex justify-center relative z-10"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="bg-gray-900 text-gray-200 rounded-2xl p-6 sm:p-10 w-full max-w-3xl text-center shadow-lg">
-            <h6 className="uppercase font-bold text-2xl sm:text-3xl mb-4 text-gradient bg-gradient-to-r to-blue-500 from-cyan-500 bg-clip-text text-transparent">
-              About Us
-            </h6>
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-              Welcome to <span className="text-cyan-500 font-semibold hover:text-cyan-300">Poeage IT Solution</span>, your trusted partner in innovative web development and IT solutions.
+    <footer className="relative bg-gradient-to-br from-black via-gray-900 to-black text-white pt-24 pb-12 overflow-hidden">
+      {/* Floating Gradient Waves */}
+      <div className="absolute inset-0 overflow-hidden -z-10">
+        <div className="absolute w-[150%] h-[150%] bg-gradient-to-r from-cyan-500/30 via-blue-500/20 to-purple-500/30 animate-wave -top-1/2 -left-1/4 rounded-full blur-3xl"></div>
+        <div className="absolute w-[120%] h-[120%] bg-gradient-to-l from-pink-400/30 via-purple-500/20 to-blue-400/30 animate-wave2 -bottom-1/2 -right-1/4 rounded-full blur-3xl"></div>
+      </div>
 
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10 space-y-16">
+        {/* About Section */}
+        <section className="max-w-4xl mx-auto text-center bg-black/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl animate-fadeIn">
+          <h2 className="text-4xl font-semibold text-transparent bg-clip-text bg-blue-400 mb-4">
+            About Us
+          </h2>
+          <p className="text-gray-300 text-lg mb-6">
+            Welcome to{" "}
+            <span className="text-blue-400 font-semibold">
+              Poeage Technology
+            </span>
+            , your trusted partner in futuristic IT and web development.
+          </p>
+          <a
+            href="/Aboutus"
+            className="bg-cyan-500 hover:bg-cyan-400 text-white font-semibold py-2 px-5 rounded-full shadow-lg transition-all hover:scale-105"
+          >
+            Explore More
+          </a>
+        </section>
+
+        {/* Info Blocks */}
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-12 animate-fadeIn delay-200">
+          {/* Logo & Description */}
+          <div className="text-center lg:text-left">
+            <img
+              src={logo}
+              alt="Poeage Logo"
+              className="h-24 w-auto mb-4 mx-auto lg:mx-0 drop-shadow-lg"
+            />
+            <h3 className="text-2xl font-bold">Poeage Technology Pvt. Ltd</h3>
+            <p className="text-gray-400 mt-2">
+              Powering innovation for businesses worldwide.
             </p>
           </div>
-        </motion.section>
 
-        <motion.div
-          className="flex flex-col lg:flex-row justify-between items-center gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {/* Company Info */}
-          <motion.div variants={itemVariants} className="text-center lg:text-left">
-            <img src={logo} alt="Poeage Corporation" className="h-20 w-56 mb-4" />
-            <h2 className="text-3xl">Poeage IT Solution.Pvt.Ltd</h2>
-            <p className="text-gray-400 mt-2">Leading IT solutions for your business growth.</p>
-          </motion.div>
+          {/* Quick Links */}
+          <div className="text-center lg:text-left">
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+           
+                <li className="text-gray-500">No links available</li>
+              
+          </div>
 
           {/* Contact & Social */}
-          <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4 text-sm">
-            {/* Contact Info */}
+          <div className="flex flex-col gap-6 text-center lg:text-left">
+            {/* Contact */}
             <div>
-              <h3 className="text-lg font-semibold mb-3">Contact Us</h3>
+              <h4 className="text-lg font-semibold mb-4">Contact</h4>
               <ul className="space-y-2">
-                <li className="flex items-center space-x-2">
-                  <MailIcon className="w-5 h-5 text-pink-500" />
-                  <a href="mailto:info@poeage.com" className="hover:text-pink-400">info@poeage.com</a>
+                <li className="flex items-center justify-center lg:justify-start gap-2">
+                  <MailIcon className="w-5 h-5 text-pink-400" />
+                  <a href="mailto:info@poeage.com">info@poeage.com</a>
                 </li>
-                <li className="flex items-center space-x-2">
-                  <PhoneIcon className="w-5 h-5 text-green-500" />
-                  <a href="tel:7358039616" className="hover:text-green-400">73580-39616</a>
+                <li className="flex items-center justify-center lg:justify-start gap-2">
+                  <PhoneIcon className="w-5 h-5 text-green-400" />
+                  <a href="tel:7358039616">73580-39616</a>
                 </li>
               </ul>
             </div>
 
-            {/* Social Icons */}
+            {/* Social */}
             <div>
-              <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
-              <div className="flex space-x-4">
-                <motion.a
-                  whileHover={{ scale: 1.2 }}
-                  href="https://www.linkedin.com/in/poeage?lipi=urn%3Ali%3Apage%3Ad_flagship3_messaging_conversation_detail%3Bt9RH1MBQQw%2B29u7BicqjmA%3D%3D"
-                  className="hover:text-cyan-500"
-                >
-                  <Linkedin size={28} />
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.2 }}
-                  href="https://www.instagram.com/poeage__com?igsh=MTljMmMyanY4dDlsbw=="
-                  className="hover:text-pink-500"
-                >
-                  <Instagram size={28} />
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.2 }}
-                  href="https://x.com/PoeageCom?t=_csbreCayXikIYn-JA0hpw&s=09"
-                  className="hover:text-blue-500"
-                >
-                  <Twitter size={28} />
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.2 }}
-                  href="https://www.facebook.com/share/1BjULrjR2w/"
-                  className="hover:text-sky-400"
-                >
-                  <Facebook size={28} />
-                </motion.a>
+              <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
+              <div className="flex justify-center lg:justify-start space-x-4">
+                {[
+                  { Icon: Linkedin, href: "https://www.linkedin.com/in/poeage" },
+                  { Icon: Instagram, href: "https://www.instagram.com/poeage__com" },
+                  { Icon: Twitter, href: "https://x.com/PoeageCom" },
+                  { Icon: Facebook, href: "https://www.facebook.com/share/1BjULrjR2w/" },
+                ].map(({ Icon, href }, idx) => (
+                  <a
+                    key={idx}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-cyan-400 transition-transform hover:scale-110"
+                  >
+                    <Icon size={26} />
+                  </a>
+                ))}
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Copyright */}
-        <motion.div
-          className="mt-10 text-center text-sm text-gray-500"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-        >
-          <p>&copy; {new Date().getFullYear()} Poeage IT Solution Pvt. Ltd. All rights reserved.</p>
-        </motion.div>
+        <p className="text-center text-gray-500 text-sm animate-fadeIn delay-400">
+          &copy; {new Date().getFullYear()} Poeage Technology Pvt. Ltd. All rights reserved.
+        </p>
       </div>
+
+      {/* Back to Top Button */}
+      {showButton && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-8 right-8 bg-gradient-to-r from-cyan-500 to-blue-600 p-4 rounded-full shadow-lg border-2 border-white hover:scale-110 hover:rotate-12 transition-all z-50"
+          aria-label="Back to top"
+        >
+          <span className="text-xl font-bold animate-bounce">↑</span>
+        </button>
+      )}
+
+      {/* Animation Styles */}
+      <style>
+        {`
+          @keyframes wave {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+          }
+          @keyframes wave2 {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(-180deg) scale(1.1); }
+            100% { transform: rotate(-360deg) scale(1); }
+          }
+          @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes glow {
+            0% { box-shadow: 0 0 10px cyan; }
+            50% { box-shadow: 0 0 25px cyan, 0 0 50px blue; }
+            100% { box-shadow: 0 0 10px cyan; }
+          }
+          .animate-wave { animation: wave 20s linear infinite; }
+          .animate-wave2 { animation: wave2 25s linear infinite; }
+          .animate-fadeIn { animation: fadeIn 1s ease both; }
+          .animate-glow { animation: glow 2s ease-in-out infinite alternate; }
+        `}
+      </style>
     </footer>
   );
 };
