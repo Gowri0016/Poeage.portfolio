@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <header className="z-20 w-full bg-gradient-to-r from-cyan-400 to-blue-800 shadow-md text-black">
       <div className="container mx-auto flex justify-between items-center px-4 md:px-8 h-16">
-        <a href="/" className="text-lg w-96 h-72 font-bold flex items-center">
+        <a href="https://www.poeage.com/" className="text-lg w-96 h-72 font-bold flex items-center">
           <img src={Poeage} alt="Logo" className="h-10" />
         </a>
 
