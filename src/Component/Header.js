@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Poeage from '../Asset/logo.png';
-import { FaCaretDown, FaBars, FaTimes, FaBriefcase } from 'react-icons/fa';
+import { FaCaretDown, FaBars, FaTimes, FaBriefcase, FaBuilding } from 'react-icons/fa';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,19 +20,61 @@ const Header = () => {
   return (
     <header className="z-20 w-full bg-gradient-to-r from-cyan-400 via-black to-blue-800 shadow-md text-black">
       <div className="container mx-auto flex justify-between items-center px-4 md:px-8 h-16">
-        <a href="https://www.poeage.com/" className="text-lg w-96 h-72 font-bold flex items-center">
-          <img src={Poeage} alt="Logo" className="h-10" />
+        <a href="https://www.poeage.com/">
+          <img src={Poeage} alt="Logo" className="w-36" />
         </a>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center text-white space-x-8">
-          <a href="/contact" className="hover:text-gradient-to-r from-cyan-400 to-blue-800 transition">
-            Contact
-          </a>
           <a href="/projects" className="hover:text-gradient-to-r from-cyan-400 to-blue-800 transition">
             Project
           </a>
 
+          {/* Group of Companies Dropdown */}
+          <div className="relative" ref={menuRef}>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex items-center gap-1 text-white"
+            >
+              <FaBuilding className="text-lg" />
+              Group of Companies
+              <FaCaretDown />
+            </button>
+            {menuOpen && (
+              <div className="absolute top-full left-0 mt-2 bg-white text-black shadow-lg rounded-md py-2 w-56">
+                <a
+                  href="https://poeage-it-solution.vercel.app/"
+                  className="block px-4 py-2 hover:bg-blue-600 hover:text-white transition"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Poeage IT Solution
+                </a>
+                <a
+                  href="https://poeageitsolution.vercel.app/"
+                  className="block px-4 py-2 hover:bg-blue-600 hover:text-white transition"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Poeage Builders
+                </a>
+                <a
+                  href="https://poeagehub.vercel.app/"
+                  className="block px-4 py-2 hover:bg-blue-600 hover:text-white transition"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Poeage Hub
+                </a>
+                <a
+                  href="https://pws-rouge-five.vercel.app/"
+                  className="block px-4 py-2 hover:bg-blue-600 hover:text-white transition"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Poeage Web Services
+                </a>
+              </div>
+            )}
+          </div>
+
+          {/* More Dropdown */}
           <div className="relative" ref={menuRef}>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -70,13 +112,7 @@ const Header = () => {
       {/* Mobile Menu Content */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white text-black px-4 py-4 space-y-2">
-          <a
-            href="/contact"
-            className="block py-2 hover:text-blue-600"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Contact
-          </a>
+          
           <a
             href="/projects"
             className="block py-2 hover:text-blue-600"
@@ -91,6 +127,13 @@ const Header = () => {
           >
             Service
           </a>
+          <div className="border-t border-gray-300 pt-2">
+            <p className="font-semibold">Group of Companies</p>
+            <a href="https://poeage-it-solution.vercel.app/" className="block py-2 hover:text-blue-600" onClick={() => setMobileMenuOpen(false)}>Poeage IT Solution</a>
+            <a href="https://poeageitsolution.vercel.app/" className="block py-2 hover:text-blue-600" onClick={() => setMobileMenuOpen(false)}>Poeage Builders</a>
+            <a href="https://poeagehub.vercel.app/" className="block py-2 hover:text-blue-600" onClick={() => setMobileMenuOpen(false)}>Poeage Hub</a>
+            <a href="https://pws-rouge-five.vercel.app/" className="block py-2 hover:text-blue-600" onClick={() => setMobileMenuOpen(false)}>Poeage Web Services</a>
+          </div>
         </div>
       )}
     </header>

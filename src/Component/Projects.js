@@ -7,7 +7,6 @@ import Ase from '../Asset/Ase.png';
 import Arivu from '../Asset/Arivukalam.png';
 import Uzhavan from '../Asset/Uzhavan.png';
 import Poeage from '../Asset/Poeagehub.png';
-
 import Port from '../Asset/Portfolio.png';
 
 export default function Project() {
@@ -87,27 +86,38 @@ export default function Project() {
   ];
 
   return (
-    <div className="px-6 md:px-12 lg:px-20 py-20 bg-white min-h-screen">
-      <h1 className="text-4xl md:text-5xl font-extralight text-black text-center mt-14 mb-16">
-        Explore Our <span className="text-blue-600 font-semibold">Showcase</span>
-      </h1>
+    <section className="px-6 md:px-12 lg:px-20 py-20 bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+      <div className="max-w-7xl mx-auto text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+          Explore Our <span className="text-blue-600">Showcase</span>
+        </h1>
+        <p className="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
+          A curated selection of our innovative projects across industries, blending creativity, technology, and performance.
+        </p>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="relative p-6 rounded-3xl bg-gradient-to-br from-white to-blue-50 shadow-2xl border border-gray-100 min-h-[540px] flex flex-col justify-between"
+            className="group relative p-6 rounded-3xl bg-white shadow-xl border border-gray-200 hover:shadow-2xl transition-transform duration-300 hover:-translate-y-2 flex flex-col"
           >
-            <img
-              src={project.imgSrc}
-              alt={project.title}
-              className="w-full h-56 object-cover rounded-xl shadow-lg"
-            />
+            <div className="relative overflow-hidden rounded-2xl">
+              <img
+                src={project.imgSrc}
+                alt={project.title}
+                className="w-full h-56 object-cover rounded-2xl transform group-hover:scale-105 transition duration-500"
+              />
+            </div>
 
-            <div className="mt-4 flex-grow">
-              <h2 className="text-2xl font-bold text-blue-900">{project.title}</h2>
-              <p className="text-gray-700 mt-2 text-sm">{project.description}</p>
-              <p className="mt-3 text-sm font-medium text-blue-500">
+            <div className="mt-6 flex-grow">
+              <h2 className="text-2xl font-semibold text-gray-800 group-hover:text-blue-700 transition-colors">
+                {project.title}
+              </h2>
+              <p className="text-gray-600 mt-3 text-sm leading-relaxed">
+                {project.description}
+              </p>
+              <p className="mt-4 text-sm font-medium text-blue-600">
                 Role: {project.role}
               </p>
             </div>
@@ -116,13 +126,13 @@ export default function Project() {
               href={project.gitLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-40 text-center mx-auto mt-6 px-5 py-2 text-white bg-gradient-to-r from-cyan-400 to-blue-800 rounded-full shadow-md transition-all duration-300 hover:scale-105"
+              className="inline-block mt-6 px-6 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-blue-800 rounded-full shadow-lg hover:from-blue-600 hover:to-blue-900 transition-transform duration-300 hover:scale-105 mx-auto"
             >
               View Project
             </a>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
