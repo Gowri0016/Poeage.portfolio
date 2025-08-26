@@ -1,5 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../Asset/logo.png";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   Facebook,
   Instagram,
@@ -7,158 +8,176 @@ import {
   Linkedin,
   MailIcon,
   PhoneIcon,
+  ArrowUp,
+  Brain,
+  Code,
+  Palette,
+  Rocket,
+  Globe,
+  Sparkles,
 } from "lucide-react";
 
 const Footer = () => {
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShowButton(window.scrollY > 120);
-    };
+    const handleScroll = () => setShowButton(window.scrollY > 150);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const services = [
+    { icon: <Brain size={20} />, name: "AI Development", path: "/ai" },
+    { icon: <Code size={20} />, name: "Web Development", path: "/web" },
+    { icon: <Palette size={20} />, name: "App Development", path: "/appde" },
+    { icon: <Rocket size={20} />, name: "Software Tools", path: "/soft" },
+    { icon: <Globe size={20} />, name: "Cloud Solutions", path: "/cloud" },
+  ];
+
+  const socialLinks = [
+    { Icon: Linkedin, href: "https://www.linkedin.com/in/poeage", color: "hover:text-blue-400" },
+    { Icon: Instagram, href: "https://www.instagram.com/poeage_technology", color: "hover:text-pink-500" },
+    { Icon: Twitter, href: "https://x.com/PoeageCom", color: "hover:text-blue-300" },
+    { Icon: Facebook, href: "https://www.facebook.com/share/1BjULrjR2w/", color: "hover:text-blue-600" },
+  ];
+
   return (
-    <footer className="relative bg-gradient-to-br from-black via-gray-900 to-black text-white pt-24 pb-12 overflow-hidden">
-      {/* Floating Gradient Waves */}
-      <div className="absolute inset-0 overflow-hidden -z-10">
-        <div className="absolute w-[150%] h-[150%] bg-gradient-to-r from-cyan-500/30 via-blue-500/20 to-purple-500/30 animate-wave -top-1/2 -left-1/4 rounded-full blur-3xl"></div>
-        <div className="absolute w-[120%] h-[120%] bg-gradient-to-l from-pink-400/30 via-purple-500/20 to-blue-400/30 animate-wave2 -bottom-1/2 -right-1/4 rounded-full blur-3xl"></div>
+    <footer className="relative bg-gradient-to-b from-black via-gray-900 to-black text-white pt-28 pb-16 overflow-hidden">
+      {/* Animated Background Orbs */}
+      <div className="absolute inset-0 -z-10">
+        <motion.div
+          className="absolute top-10 left-10 w-64 h-64 bg-cyan-700/20 blur-3xl rounded-full"
+          animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+        <motion.div
+          className="absolute bottom-20 right-10 w-72 h-72 bg-purple-600/20 blur-3xl rounded-full"
+          animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.6, 0.3] }}
+          transition={{ duration: 10, repeat: Infinity }}
+        />
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10 space-y-16">
-        {/* About Section */}
-        <section className="max-w-4xl mx-auto text-center bg-black/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl animate-fadeIn">
-          <h2 className="text-4xl font-semibold text-transparent bg-clip-text bg-blue-400 mb-4">
-            About Us
-          </h2>
-          <p className="text-gray-300 text-lg mb-6">
-            Welcome to{" "}
-            <span className="text-blue-400 font-semibold">
-              Poeage Technology
-            </span>
-            , your trusted partner in futuristic IT and web development.
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10 space-y-24">
+        {/* Call to Action */}
+        <motion.section
+          className="max-w-5xl mx-auto text-center bg-gradient-to-br from-cyan-900/30 via-black/40 to-purple-900/30 backdrop-blur-xl rounded-[2rem] p-12 shadow-2xl border border-cyan-500/20"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.h2 className="text-4xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 mb-6 tracking-tight">
+            Transforming Vision into Reality
+          </motion.h2>
+          <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+            Poeage Technology blends innovation, design, and intelligence to craft futuristic solutions that empower businesses globally.
           </p>
           <a
-            href="/Aboutus"
-            className="bg-cyan-500 hover:bg-cyan-400 text-white font-semibold py-2 px-5 rounded-full shadow-lg transition-all hover:scale-105"
+            href="/contact"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all hover:scale-110 hover:shadow-purple-500/30"
           >
-            Explore More
+            <Sparkles className="w-5 h-5" /> Let's Build Together
           </a>
-        </section>
+        </motion.section>
 
-        {/* Info Blocks */}
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-12 animate-fadeIn delay-200">
-          {/* Logo & Description */}
+        {/* Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+          {/* Logo & Intro */}
           <div className="text-center lg:text-left">
-            <img
-              src={logo}
-              alt="Poeage Logo"
-              className="h-24 w-auto mb-4 mx-auto lg:mx-0 drop-shadow-lg"
-            />
-            <h3 className="text-2xl font-bold">Poeage Technology Pvt. Ltd</h3>
-            <p className="text-gray-400 mt-2">
-              Powering innovation for businesses worldwide.
+            <img src={logo} alt="Poeage Logo" className="w-36 mb-4 mx-auto lg:mx-0 drop-shadow-lg" />
+            <h3 className="text-xl font-bold mb-2">Poeage Technology</h3>
+            <p className="text-gray-400 mb-6 text-sm leading-relaxed">
+              Innovating with passion to design powerful digital ecosystems that shape the future.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="text-center lg:text-left">
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-           
-                <li className="text-gray-500">No links available</li>
-              
+          {/* About Us */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-cyan-400">About Us</h4>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Founded on <span className="text-cyan-300 font-medium">October 31, 2023</span>, Poeage Technology has been committed to bridging creativity and intelligence to deliver cutting-edge solutions for a global audience.
+            </p>
           </div>
 
-          {/* Contact & Social */}
-          <div className="flex flex-col gap-6 text-center lg:text-left">
-            {/* Contact */}
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2">
-                <li className="flex items-center justify-center lg:justify-start gap-2">
-                  <MailIcon className="w-5 h-5 text-pink-400" />
-                  <a href="mailto:info@poeage.com">info@poeage.com</a>
-                </li>
-                <li className="flex items-center justify-center lg:justify-start gap-2">
-                  <PhoneIcon className="w-5 h-5 text-green-400" />
-                  <a href="tel:7358039616">73580-39616</a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Social */}
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
-              <div className="flex justify-center lg:justify-start space-x-4">
-                {[
-                  { Icon: Linkedin, href: "https://www.linkedin.com/in/poeage" },
-                  { Icon: Instagram, href: "https://www.instagram.com/poeage__com" },
-                  { Icon: Twitter, href: "https://x.com/PoeageCom" },
-                  { Icon: Facebook, href: "https://www.facebook.com/share/1BjULrjR2w/" },
-                ].map(({ Icon, href }, idx) => (
-                  <a
-                    key={idx}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-cyan-400 transition-transform hover:scale-110"
-                  >
-                    <Icon size={26} />
+          {/* Services */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-cyan-400">Services</h4>
+            <ul className="space-y-3">
+              {services.map((service, idx) => (
+                <li key={idx}>
+                  <a href={service.path} className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition">
+                    {service.icon}
+                    {service.name}
                   </a>
-                ))}
-              </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Social Navigation */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-cyan-400">Connect With Us</h4>
+            <div className="flex justify-center lg:justify-start space-x-4">
+              {socialLinks.map(({ Icon, href, color }, idx) => (
+                <a
+                  key={idx}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center text-white transition-all ${color} hover:bg-cyan-900 hover:scale-110 shadow-lg`}
+                >
+                  <Icon size={20} />
+                </a>
+              ))}
             </div>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-cyan-400">Get in Touch</h4>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-center gap-2">
+                <MailIcon className="w-4 h-4 text-cyan-500" />
+                <a href="mailto:info@poeage.com" className="hover:text-cyan-400 transition">
+                  info@poeage.com
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <PhoneIcon className="w-4 h-4 text-cyan-500" />
+                <a href="tel:8056889616" className="hover:text-cyan-400 transition">
+                  +91 805-688-9616
+                </a>
+              </li>
+              <li className="pt-4">
+                <p className="font-semibold text-gray-200">Have a project in mind?</p>
+                <a href="/quotes" className="text-cyan-400 hover:underline">
+                  Get a Quote →
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
         {/* Copyright */}
-        <p className="text-center text-gray-500 text-sm animate-fadeIn delay-400">
-          &copy; {new Date().getFullYear()} Poeage Technology Pvt. Ltd. All rights reserved.
-        </p>
+        <div className="text-center pt-10 border-t border-gray-800 text-gray-500 text-sm">
+          © {new Date().getFullYear()} Poeage Technology Pvt. Ltd. | Designed with ❤️ in Tamil Nadu
+        </div>
       </div>
 
-      {/* Back to Top Button */}
-      {showButton && (
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-8 right-8 bg-gradient-to-r from-cyan-500 to-blue-600 p-4 rounded-full shadow-lg border-2 border-white hover:scale-110 hover:rotate-12 transition-all z-50"
-          aria-label="Back to top"
-        >
-          <span className="text-xl font-bold animate-bounce">↑</span>
-        </button>
-      )}
-
-      {/* Animation Styles */}
-      <style>
-        {`
-          @keyframes wave {
-            0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.1); }
-            100% { transform: rotate(360deg) scale(1); }
-          }
-          @keyframes wave2 {
-            0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(-180deg) scale(1.1); }
-            100% { transform: rotate(-360deg) scale(1); }
-          }
-          @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-          }
-          @keyframes glow {
-            0% { box-shadow: 0 0 10px cyan; }
-            50% { box-shadow: 0 0 25px cyan, 0 0 50px blue; }
-            100% { box-shadow: 0 0 10px cyan; }
-          }
-          .animate-wave { animation: wave 20s linear infinite; }
-          .animate-wave2 { animation: wave2 25s linear infinite; }
-          .animate-fadeIn { animation: fadeIn 1s ease both; }
-          .animate-glow { animation: glow 2s ease-in-out infinite alternate; }
-        `}
-      </style>
+      {/* Back to Top */}
+      <AnimatePresence>
+        {showButton && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.6 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.6 }}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="fixed bottom-8 right-8 bg-gradient-to-r from-cyan-500 to-purple-600 p-4 rounded-2xl shadow-lg hover:scale-125 transition z-50"
+          >
+            <ArrowUp className="w-6 h-6 text-white" />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </footer>
   );
 };

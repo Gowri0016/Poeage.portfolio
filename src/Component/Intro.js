@@ -45,7 +45,7 @@ export default function Dashboard() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <h1 className="text-4xl mt-10 md:text-5xl font-bold text-gray-900 mb-4">
           Poeage Project Dashboard
         </h1>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto">
